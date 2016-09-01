@@ -33,3 +33,4 @@ public/lib
 # TypeScript
 .tscache
 app
+typings
