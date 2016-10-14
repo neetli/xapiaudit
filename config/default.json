@@ -1,0 +1,12 @@
+{
+    "Express": {
+        "port": 3000
+    },
+    "MongoDB": {
+        "uri": "mongodb://localhost/fiatoe",
+        "enableDebug": false
+        // var uri = 'mongodb://user:pass@localhost:port/database';
+        // example with replica sets
+        // var uri = 'mongodb://user:pass@localhost:port/database,mongodb://anotherhost:port,mongodb://yetanother:port';
+    }
+}

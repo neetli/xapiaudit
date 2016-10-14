@@ -2,7 +2,7 @@
 "use strict";
 
 import * as express from "express";
-//import {AuthenticationController} from "../controllers/authenticationController";
+import {SampleController} from "../controllers/sampleController";
 
 export class RouteBuilder {
     public static configureRouter(): express.Router {
@@ -12,9 +12,13 @@ export class RouteBuilder {
          * API Routes
          **********************************/
 
-        /* Authentication */
-        //router.post("/users/authenticate", AuthenticationController.authenticate);
-        // router.post('/api/authenticateGoogle', AuthenticationController.authenticateGoogle);
+        /* Samples */
+        router.get("/samples/:oid", SampleController.get);
+        router.get("/samples", SampleController.find);
+        router.post("/samples", SampleController.create);
+        router.put("/samples", SampleController.update);
+        router.delete("/samples", SampleController.delete);
+        
 
         /**********************************
         * Web Routes
