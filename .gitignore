@@ -34,3 +34,7 @@ public/lib
 .tscache
 app
 typings
+
+#misc
+results.txt
+.DS_Store
