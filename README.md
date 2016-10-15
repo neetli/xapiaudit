@@ -12,7 +12,7 @@ sudo npm install npm@latest -g
 ```
 If you want to work on this project, you can clone this repository to a local directory with the following
 ```bash
-sudo npm install npm@latest -g
+git clone https://github.com/thethomaslee/empty-microservice-app.git
 ```
 However, is you wish to start a new project based on this sample service (most likely case), then 
 do the following. This will mirror the sample repository into another Git repo.
