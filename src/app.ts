@@ -7,7 +7,7 @@ import * as bodyParser from "body-parser";
 import * as express from "express";
 import * as path from "path";
 import * as mysql from "mysql";
-//import * as db from "./services/databaseService";
+import {Database} from "./library/database";
 import {RouteBuilder} from "./routes/routeBuilder";
 
 
@@ -73,6 +73,10 @@ export class Server {
         this.app.use(router);
 
         // connect to the database
-        // db.DatabaseService.connect();
+        Database.open((err, connection) => {
+            // configure the routes
+            let router = RouteBuilder.configureRouter();
+            this.app.use(router);
+        });
     }
 }

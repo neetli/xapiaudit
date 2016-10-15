@@ -92,7 +92,10 @@ export class SampleController extends Controller {
         let search = WebHelper.getParameterString(req, "search");
 
         // "search"" should be a json representation of a FilterSet
-        let searchFilterSet = f.FilterSet.fromJSON(search);
+        let searchFilterSet: f.FilterSet;
+        if (search) {
+            searchFilterSet = f.FilterSet.fromJSON(search);
+        } 
 
         // create the sample service and find the samples
         let svc = new SampleService();

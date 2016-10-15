@@ -133,7 +133,7 @@ export class SampleService {
     public find(filterSet: f.FilterSet, 
         next: (err: Error, samples?: [model.ISample]) => void) {
 
-        let query = filterSet.buildMongoQuery();
+        let query = filterSet ? filterSet.buildMongoQuery() : {};
 
         model.Sample.find(query, (err, res) => {
             if (err) { return next(err); }
