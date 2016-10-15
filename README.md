@@ -14,7 +14,7 @@ If you want to work on this project, you can clone this repository to a local di
 ```bash
 git clone https://github.com/thethomaslee/empty-microservice-app.git
 ```
-However, is you wish to start a new project based on this sample service (most likely case), then 
+However, if you wish to start a new project based on this sample service (most likely case), then 
 do the following. This will mirror the sample repository into another Git repo.
 
 ```bash
@@ -39,14 +39,14 @@ npm install
 This project uses TypeScript. TypeScript requires that type information be present for the 
 other classes you are referencing. Typings is the system we use to pull version of the type files
 so that TypeScript will be able to compile our code. Install the required Typings information with 
-the following, run from the project directory.
+the following: (run from the project directory).
 ```bash
 ./node_modules/.bin/typings install
 ```
 
 This project uses Grunt to compile the TypeScript, liniting and run unit tests.
-Assuming we are using a local project ersion of Grunt, you can run the following to compile the application
-run the tests. The included test is an integration test and require MongoDB to be running on localhost,
+Assuming we are using a local project version of Grunt, you can run the following to compile the application
+run the tests. The included test is an integration test and requires MongoDB to be running on localhost,
 using the default port with no password. To start MongoDB run:
 ```bash
 ./node_modules/.bin/grunt buildandtest
