@@ -85,6 +85,17 @@ module.exports = function (grunt) {
     "watch:noexpress"
   ]);
 
+  grunt.registerTask("build", [
+    "ts",
+    "tslint"
+  ]);
+
+  grunt.registerTask("buildandtest", [
+    "ts",
+    "tslint",
+    "mochaTest"
+  ]);
+
   grunt.registerTask("default", [
     "ts",
     "tslint",

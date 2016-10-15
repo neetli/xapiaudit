@@ -6,6 +6,7 @@ import {expect} from "chai";
 import {SampleService} from "../services/sampleService";
 import {Database} from "../library/database";
 import * as async from "async";
+import * as f from "../library/filtering";
 
 describe("Sample Service", () => {
     let sampleData = {
@@ -30,7 +31,11 @@ describe("Sample Service", () => {
             function(callback: any) {
                 // remove the test Sample if it is present for some reason
                 // it should have been cleaned up from the latest test
-                sampleSvc.getByName(sampleData.name, (err, foundSample) => {
+                // build the query
+                let fs = new f.FilterSet()
+                    .addFilter("name", f.OperatorType.Equal, sampleData.name);
+
+                sampleSvc.findOne(fs, (err, foundSample) => {
                     if (err) { return callback(err); }
 
                     if (foundSample) {

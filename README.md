@@ -29,3 +29,29 @@ git push --mirror https://github.com/[exampleuser]/[new-repository.git]
 cd ..
 rm -rf empty-microservice-app.git
 ```
+
+* Next we are going to want to install the project dependencies. Change to the project directory
+and run the following:
+```bash
+npm install
+```
+
+* This project uses TypeScript. TypeScript requires that type information be present for the 
+other classes you are referencing. Typings is the system we use to pull version of the type files
+so that TypeScript will be able to compile our code. Install the required Typings information with 
+the following, run from the project directory.
+```bash
+./node_modules/.bin/typings install
+```
+
+* This project uses Grunt to compile the TypeScript, liniting and run unit tests.
+Assuming we are using a local project ersion of Grunt, you can run the following to compile the application
+run the tests. The included test is an integration test and require MongoDB to be running on localhost,
+using the default port with no password. To start MongoDB run:
+```bash
+./node_modules/.bin/grunt buildandtest
+```
+To build the app and run the tests execute the following: 
+```bash
+./node_modules/.bin/grunt buildandtest
+```
