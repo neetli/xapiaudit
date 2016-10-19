@@ -8,8 +8,7 @@ import * as uuid from "node-uuid";
 import * as f from "../library/filtering";
 
 /**
- * Application samples are the root container in the ORM service. They contain
- * one or more application definitions which then contain entities etc.
+ *  Service for managing Samples
  * 
  * @export
  * @class SampleService
@@ -17,11 +16,11 @@ import * as f from "../library/filtering";
 export class SampleService {
     
     /**
-     * Creates a new application sample
+     * Creates a new sample
      * 
-     * @param {string} name The name of the application
-     * @param {string} description The description of the application
-     * @param {(err:Error, application: applicationModel.IApplication)=>void} next
+     * @param {string} name The name of the sample
+     * @param {string} description The description of the sample
+     * @param {(err:Error, sample: model.ISample)=>void} next
      */
     public create(name: string, description: string, 
         next: (err: Error, sample?: model.ISample) => void) {
@@ -143,7 +142,7 @@ export class SampleService {
     }
 
     /**
-     * Returns a single application base on the supplied criteria
+     * Returns a single sample base on the supplied criteria
      * 
      * @param {string} sampleOid The oid of the sample
      * @param {f.FilterSet} filterSet The filter / search criteria
@@ -163,12 +162,12 @@ export class SampleService {
     }
 
     /**
-     * Updates an application sample
+     * Updates a sample
      *
      * @param {string} oid The oid of the application 
-     * @param {string} name The name of the application
-     * @param {string} description The description of the application
-     * @param {(err:Error, application: applicationModel.IApplication)=>void} next
+     * @param {string} name The name of the sample
+     * @param {string} description The description of the sample
+     * @param {(err:Error, sample: model.ISample)=>void} next
      */
     public update(oid: string, name: string, description: string, 
         next: (err: Error, sample?: model.ISample) => void) {
