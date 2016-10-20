@@ -6,9 +6,3 @@ export interface IAccount
     homepage: string;
     name: string;
 }
-
-export class Account implements IAccount
-{
-    homepage = "";
-    name = "";
-}
